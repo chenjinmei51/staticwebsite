@@ -29,23 +29,52 @@ header {
     text-align: center;
 }
 
-header nav ul {
-    list-style: none;
+/* 导航栏样式 */
+header nav {
+    background-color: #4CAF50;
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 0.5rem 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+/* LOGO 样式 */
+.logo {
+    width: 120px; /* 根据你的 logo 大小调整 */
 }
 
-header nav ul li a {
-    text-decoration: none;
+/* 导航菜单样式 */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin-left: auto; /* PC端菜单靠右对齐 */
+}
+/* 链接样式 */
+nav ul li a {
     color: white;
+    text-decoration: none;
     transition: color 0.3s;
 }
 
-header nav ul li a:hover {
+nav ul li a:hover {
     color: #FFEB3B;
 }
+/* 汉堡菜单按钮样式（默认隐藏，只在移动端显示） */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+
+
 
 main {
     padding: 2rem;
@@ -66,8 +95,34 @@ footer {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-    header nav ul {
+    /* 把导航栏反向排列：汉堡菜单在左边，Logo 在右边 */
+    header nav {
+        flex-direction: row-reverse;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* 隐藏 PC 端的导航菜单 */
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #4CAF50;
         flex-direction: column;
+    }
+
+    /* 展开菜单时显示 */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 1rem;
     }
 
     main {
