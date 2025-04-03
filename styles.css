@@ -91,11 +91,19 @@ footer {
 /* 移动端样式 */
 @media (max-width: 768px) {
 
-    /* 导航栏布局 */
+   /* 导航栏布局 */
     header nav {
-        flex-direction: row; /* 从左到右排列 */
-        justify-content: space-between;
-    }
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 60px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加底部阴影 */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
     /* 显示汉堡菜单按钮 */
     .hamburger {
