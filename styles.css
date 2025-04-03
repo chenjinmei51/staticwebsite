@@ -28,6 +28,11 @@ header nav {
     justify-content: space-between;
     padding:20px;
     height: 50px; /* 设置与 logo 的高度一致 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加底部阴影 */
+position: sticky;
+top: 0;
+z-index: 1000;
+
 }
 
 /* PC端：Logo 在左侧，菜单在右侧 */
