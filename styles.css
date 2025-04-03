@@ -1,4 +1,4 @@
-/* 通用样式重置 */
+/* 通用样式 */
 * {
     margin: 0;
     padding: 0;
@@ -8,10 +8,8 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
+
 /* 顶部声明样式 */
 .disclosure {
     background-color: #f0f0f0;
@@ -22,13 +20,6 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
 /* 导航栏样式 */
 header nav {
     background-color: #4CAF50;
@@ -37,26 +28,19 @@ header nav {
     justify-content: space-between;
     padding: 10px 20px;
 }
-/* 通用样式 (适用于 PC端) */
+
+/* PC端：Logo 在左侧，菜单在右侧 */
 .logo {
-    width: 205px; /* 调整图片大小 */
+    width: 205px;
     display: block;
 }
 
-@media (min-width: 769px) {
-    .logo {
-        margin-left: 0;
-    }
-}
-
-/* 导航菜单样式 */
 nav ul {
     list-style: none;
     display: flex;
     gap: 1.5rem;
-    margin-left: auto; /* PC端菜单靠右对齐 */
 }
-/* 链接样式 */
+
 nav ul li a {
     color: white;
     text-decoration: none;
@@ -66,7 +50,8 @@ nav ul li a {
 nav ul li a:hover {
     color: #FFEB3B;
 }
-/* 汉堡菜单按钮样式（默认隐藏，只在移动端显示） */
+
+/* 汉堡菜单按钮样式 */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -79,9 +64,6 @@ nav ul li a:hover {
     background-color: white;
     margin: 4px 0;
 }
-
-
-
 
 main {
     padding: 2rem;
@@ -100,21 +82,18 @@ footer {
     padding: 1rem;
 }
 
-/* 响应式设计 */
+/* 移动端样式 */
 @media (max-width: 768px) {
-    /* 把导航栏反向排列：汉堡菜单在左边，Logo 在右边 */
+
+    /* 导航栏布局 */
     header nav {
-        flex-direction: row-reverse;
+        flex-direction: row; /* 从左到右排列 */
         justify-content: space-between;
     }
 
+    /* 显示汉堡菜单按钮 */
     .hamburger {
         display: flex;
-    }
-    .logo {
-        margin: 0 auto;
-        display: block;
-        text-align: center;
     }
 
     /* 隐藏 PC 端的导航菜单 */
@@ -138,11 +117,14 @@ footer {
         padding: 1rem;
     }
 
-    main {
-        padding: 1rem;
+    /* LOGO 靠右对齐 */
+    .logo {
+        margin-left: auto;
+        order: 2; /* 确保 logo 在汉堡菜单按钮右侧 */
     }
 
-    section {
-        padding: 1rem 0;
+    /* 汉堡按钮在最左边 */
+    .hamburger {
+        order: 1;
     }
 }
