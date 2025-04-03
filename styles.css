@@ -12,6 +12,15 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+/* 顶部声明样式 */
+.disclosure {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #ddd;
+}
 
 header {
     background-color: #4CAF50;
