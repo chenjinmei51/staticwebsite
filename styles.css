@@ -37,9 +37,16 @@ header nav {
     justify-content: space-between;
     padding: 10px 20px;
 }
-/* LOGO 样式 */
+/* 通用样式 (适用于 PC端) */
 .logo {
-    width: 205px; /* 根据你的 logo 大小调整 */
+    width: 205px; /* 调整图片大小 */
+    display: block;
+}
+
+@media (min-width: 769px) {
+    .logo {
+        margin-left: 0;
+    }
 }
 
 /* 导航菜单样式 */
@@ -98,10 +105,16 @@ footer {
     /* 把导航栏反向排列：汉堡菜单在左边，Logo 在右边 */
     header nav {
         flex-direction: row-reverse;
+        justify-content: space-between;
     }
 
     .hamburger {
         display: flex;
+    }
+    .logo {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
     }
 
     /* 隐藏 PC 端的导航菜单 */
