@@ -26,7 +26,8 @@ header nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding:20px;
+    height: 50px; /* 设置与 logo 的高度一致 */
 }
 
 /* PC端：Logo 在左侧，菜单在右侧 */
