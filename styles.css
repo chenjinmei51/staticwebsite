@@ -22,7 +22,7 @@ body {
 
 /* 导航栏样式 */
 header nav {
-    background-color: #4CAF50;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,7 +48,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
+    color: black;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -67,7 +67,7 @@ nav ul li a:hover {
 .hamburger div {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: black;
     margin: 4px 0;
 }
 
