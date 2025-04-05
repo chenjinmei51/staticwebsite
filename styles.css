@@ -104,13 +104,12 @@ nav ul li.show > .submenu, nav ul li.show > .submenu-level2 {
 
 /* 美化 SVG 图标 */
 .triangle-icon {
-    position: absolute;
-   margin-left: 5px;
+   position: absolute;
     right: 10px; /* 靠右对齐 */
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 5px;
     transition: transform 0.3s;
     display: inline-block;
+    vertical-align: middle;
 }
 
 nav ul li.show > a > .triangle-icon {
