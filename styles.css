@@ -85,7 +85,10 @@ nav ul li a:hover {
     border-top: 3px solid #FF5733; 
     white-space: nowrap;
 }
-
+.submenu li {
+    display: flex;
+    justify-content: space-between;
+}
 
 /* 三级菜单 (推动内容显示) */
 .submenu-level2 {
