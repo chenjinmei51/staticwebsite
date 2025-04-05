@@ -86,15 +86,7 @@ nav ul li a:hover {
     white-space: nowrap;
 }
 
-/* 修改 submenu 样式，让菜单项支持图标右对齐 */
-.submenu li {
-    position: relative;
-    padding: 10px;
-    display: flex; /* 使用 flexbox 布局 */
-    justify-content: space-between; /* 左右对齐 */
-    align-items: center; /* 垂直居中对齐 */
-    width: 1000px; /* 设置一个足够宽度的区域，使图标靠右显示 */
-}
+
 
 
 /* 三级菜单 (推动内容显示) */
@@ -117,7 +109,7 @@ nav ul li.show > .submenu, nav ul li.show > .submenu-level2 {
 .triangle-icon {
    
     
-    margin-left: 5px;
+    margin-left: auto;
     transition: transform 0.3s;
     display: inline-block;
     vertical-align: middle;
