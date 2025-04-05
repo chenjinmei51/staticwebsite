@@ -103,6 +103,24 @@ nav ul li a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
     z-index: 998;
+   text-align: left; /* 强制内容左对齐 */
+}
+
+/* 三级菜单文字左对齐 */
+.submenu-level2 li {
+    padding: 5px 10px;
+    text-align: left;
+}
+
+/* 三级菜单链接样式 */
+.submenu-level2 li a {
+    display: block;
+    text-align: left;
+    color: black;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* 防止内容自动换行 */
 }
 
 /* 子菜单链接样式 */
