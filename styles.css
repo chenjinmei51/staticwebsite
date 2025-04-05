@@ -136,6 +136,21 @@ nav ul li.show > .submenu, nav ul li.show > .submenu-level2 {
     vertical-align: middle;
 }
 
+/* 显示的三级菜单应该在下方，而不是右侧 */
+.submenu-level2 {
+    display: none;
+    position: static; /* 确保三级菜单在下方展开 */
+    padding-left: 20px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    width: auto; /* 自动宽度 */
+}
+
+/* 当显示时 */
+.submenu li.show > .submenu-level2 {
+    display: block;
+}
+
 nav ul li.show > a > .triangle-icon {
     transform: rotate(180deg);
 }
