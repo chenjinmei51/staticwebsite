@@ -74,7 +74,7 @@ nav ul li a:hover {
 /* 二级菜单 (PC端) */
 .submenu {
     display: none;
-    position: absolute; 
+    position: relative; 
     top: 40px; /* 与导航栏高度保持一致，使其紧贴导航栏底部 *//*top: calc(100% - 2px);*/ /* 确保与导航栏的底线重叠 (-2px 用于完美重叠) */   /*top: 100%;*/
     left: 0;/*right:0;/*left: 0;*/
     background-color: white;
