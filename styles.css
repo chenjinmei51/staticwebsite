@@ -1,3 +1,146 @@
+/* 通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* 顶部声明样式 */
+.disclosure {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 导航栏样式 */
+header nav {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:20px;
+    height: 50px; /* 设置与 logo 的高度一致 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加底部阴影 */
+position: sticky;
+top: 0;
+z-index: 1000;
+
+}
+
+/* PC端：Logo 在左侧，菜单在右侧 */
+.logo {
+    width: 205px;
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* 基本样式 */
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 一级菜单 */
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FFEB3B;
+}
+
+/* 二级和三级菜单样式 */
+.submenu, .submenu-level2 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 999;
+}
+
+/* 三级菜单位置偏移 */
+.submenu-level2 {
+    top: 0;
+    left: 100%;
+}
+
+/* 显示二级或三级菜单 */
+nav ul li.show > .submenu, nav ul li.show > .submenu-level2 {
+    display: block;
+}
+
+/* 美化 SVG 图标 */
+.triangle-icon {
+    margin-left: 5px;
+    transition: transform 0.3s;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 点击后翻转三角形 */
+nav ul li.show > a > .triangle-icon {
+    transform: rotate(180deg);
+}
+
+/* 汉堡菜单按钮样式 */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 2rem 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
 /* 移动端样式 */
 @media (max-width: 768px) {
 
