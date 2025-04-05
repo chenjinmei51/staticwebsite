@@ -61,8 +61,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (submenu) {
                 event.preventDefault();
 
-                // 自动关闭同一个二级菜单下的所有三级菜单
-                parentLi.parentElement.querySelectorAll('.submenu-level2 li.show').forEach(li => {
+                // 🔥 自动关闭所有的三级菜单，包括同一个二级菜单下的所有三级菜单
+                parentLi.parentElement.querySelectorAll('.submenu-level2 li').forEach(li => {
+                    if (li !== parentLi) li.classList.remove('show');
+                });
+
+                // 🔥 自动关闭所有三级菜单，即便它们在不同的二级菜单下
+                document.querySelectorAll('.submenu-level2 li.show').forEach(li => {
                     if (li !== parentLi) li.classList.remove('show');
                 });
 
