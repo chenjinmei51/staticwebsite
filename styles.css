@@ -93,7 +93,7 @@ nav ul li a:hover {
     display: flex; /* 使用 flexbox 布局 */
     justify-content: space-between; /* 左右对齐 */
     align-items: center; /* 垂直居中对齐 */
-    width: 250px; /* 设置一个足够宽度的区域，使图标靠右显示 */
+    width: 1000px; /* 设置一个足够宽度的区域，使图标靠右显示 */
 }
 
 
