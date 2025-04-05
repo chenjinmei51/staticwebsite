@@ -1,4 +1,6 @@
-/* 通用样式 */
+/* ==========================
+   通用样式
+   ========================== */
 * {
     margin: 0;
     padding: 0;
@@ -29,10 +31,9 @@ header nav {
     padding:20px;
     height: 50px; /* 设置与 logo 的高度一致 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加底部阴影 */
-position: sticky;
-top: 0;
-z-index: 1000;
-
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 /* PC端：Logo 在左侧，菜单在右侧 */
@@ -41,6 +42,7 @@ z-index: 1000;
     display: block;
 }
 
+/* 主导航菜单 */
 nav ul {
     list-style: none;
     display: flex;
@@ -74,27 +76,35 @@ nav ul li a:hover {
     color: #FFEB3B;
 }
 
-/* 二级和三级菜单样式 */
+/* ==========================
+   二级和三级菜单样式 (重要改动)
+   ========================== */
 .submenu, .submenu-level2 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    z-index: 999;
+    display: none; /* 默认隐藏 */
+    padding-left: 20px; /* 用于区分不同层级 */
+    background-color: white; /* 菜单背景色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    margin-top: 5px; /* 添加间距，避免内容挤在一起 */
+    border: 1px solid #ddd; /* 添加边框让菜单更明显 */
+    border-radius: 4px; /* 圆角样式 */
 }
 
-/* 三级菜单位置偏移 */
+/* 当菜单显示时 */
+li.show > .submenu,
+li.show > .submenu-level2 {
+    display: block; /* 占据页面空间，推动下面内容 */
+}
+
+/* 调整菜单的样式 */
+.submenu > li, .submenu-level2 > li {
+    padding: 8px 16px;
+    white-space: nowrap; /* 防止菜单项文字换行 */
+}
+
+/* 区分不同层次的菜单 */
 .submenu-level2 {
-    top: 0;
-    left: 100%;
-}
-
-/* 显示二级或三级菜单 */
-nav ul li.show > .submenu, nav ul li.show > .submenu-level2 {
-    display: block;
+    padding-left: 15px;
+    margin-top: 2px;
 }
 
 /* 美化 SVG 图标 */
@@ -141,7 +151,9 @@ footer {
     padding: 1rem;
 }
 
-/* 移动端样式 */
+/* ==========================
+   移动端样式 (保留原有功能)
+   ========================== */
 @media (max-width: 768px) {
 
    /* 导航栏布局 */
@@ -158,46 +170,47 @@ footer {
     z-index: 1000;
 }
 
+/* 让子菜单在移动端能够正常显示 */
 .submenu, .submenu-level2 {
-        position: static;
-        padding-left: 20px;
-        box-shadow: none;
-    }
+    position: static;
+    padding-left: 20px;
+    box-shadow: none;
+}
     
-    /* 显示汉堡菜单按钮 */
-    .hamburger {
-        display: flex;
-    }
+/* 显示汉堡菜单按钮 */
+.hamburger {
+    display: flex;
+}
 
-    /* 隐藏 PC 端的导航菜单 */
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #4CAF50;
-        flex-direction: column;
-    }
+/* 隐藏 PC 端的导航菜单 */
+nav ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #4CAF50;
+    flex-direction: column;
+}
 
-    /* 展开菜单时显示 */
-    nav ul.active {
-        display: flex;
-    }
+/* 展开菜单时显示 */
+nav ul.active {
+    display: flex;
+}
 
-    nav ul li {
-        text-align: center;
-        padding: 1rem;
-    }
+nav ul li {
+    text-align: center;
+    padding: 1rem;
+}
 
-    /* LOGO 靠右对齐 */
-    .logo {
-        margin-left: auto;
-        order: 2; /* 确保 logo 在汉堡菜单按钮右侧 */
-    }
+/* LOGO 靠右对齐 */
+.logo {
+    margin-left: auto;
+    order: 2;
+}
 
-    /* 汉堡按钮在最左边 */
-    .hamburger {
-        order: 1;
-    }
+/* 汉堡按钮在最左边 */
+.hamburger {
+    order: 1;
+}
 }
