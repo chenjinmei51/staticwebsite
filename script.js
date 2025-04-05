@@ -10,24 +10,25 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.classList.toggle('active');
     });
 
-    // 点击页面的任意区域关闭菜单
-    document.addEventListener('click', (event) => {
-        if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-            menu.classList.remove('active');
-            hamburger.classList.remove('active');
-            document.querySelectorAll('.show').forEach(item => item.classList.remove('show'));
-        }
-    });
-
     // 自动清理所有菜单项
     const clearAllMenus = () => {
         document.querySelectorAll('.submenu, .submenu-level2').forEach(submenu => submenu.style.display = 'none');
         document.querySelectorAll('.show').forEach(item => item.classList.remove('show'));
     };
 
+    // 点击页面的任意区域关闭菜单
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+            clearAllMenus();
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    });
+
     // 二级菜单的展开与关闭逻辑
     menuItems.forEach(item => {
         item.addEventListener('click', function(event) {
+            event.stopPropagation();
             const parentLi = this.parentElement;
 
             if (parentLi.querySelector('.submenu')) {
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     submenuItems.forEach(item => {
         item.addEventListener('click', function(event) {
+            event.stopPropagation();
             const parentLi = this.parentElement;
             const submenu = parentLi.querySelector('.submenu-level2');
 
