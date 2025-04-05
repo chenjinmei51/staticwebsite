@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ✅ 添加窗口大小变化时自动清除 .active 和 .show 类名
+    // 添加窗口大小变化时自动清除 .active 和 .show 类名
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) { 
             menu.classList.remove('active');
@@ -28,16 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ✅ 二级菜单展开与关闭逻辑
+    // 二级菜单展开与关闭逻辑
     menuItems.forEach(item => {
         item.addEventListener('click', function(event) {
             const parentLi = this.parentElement;
 
             if (parentLi.querySelector('.submenu')) {
-                event.preventDefault(); // 阻止链接跳转
-                
+                event.preventDefault();
+
                 // 自动关闭所有二级菜单及其下的三级菜单
-                document.querySelectorAll('#menu li.show').forEach(li => {
+                document.querySelectorAll('#menu > li.show').forEach(li => {
                     if (li !== parentLi) {
                         li.classList.remove('show');
                         li.querySelectorAll('.submenu-level2 li.show').forEach(subLi => subLi.classList.remove('show'));
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ✅ 处理三级菜单的展开与关闭（如果存在）
+    // 三级菜单的展开与关闭逻辑
     const submenuItems = document.querySelectorAll('.submenu > li > a');
 
     submenuItems.forEach(item => {
@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (submenu) {
                 event.preventDefault();
-                
-                // 🔥 自动关闭所有同级的三级菜单
-                parentLi.parentElement.querySelectorAll('.submenu-level2 li.show').forEach(li => {
+
+                // 关闭同一个二级菜单下的所有三级菜单
+                parentLi.parentElement.querySelectorAll('.submenu-level2 li').forEach(li => {
                     if (li !== parentLi) li.classList.remove('show');
                 });
 
