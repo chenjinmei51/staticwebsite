@@ -72,6 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 // 切换当前三级菜单的显示状态
                 submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
                 parentLi.classList.toggle('show');
+
+                // 确保三级菜单在二级菜单下方显示
+                submenu.style.position = 'static';  // 确保三级菜单在下方显示
             }
         });
     });
