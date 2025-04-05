@@ -19,16 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 添加窗口大小变化时自动清除 .active 和 .show 类名
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) { 
-            menu.classList.remove('active');
-            hamburger.classList.remove('active');
-            document.querySelectorAll('.show').forEach(item => item.classList.remove('show'));
-        }
-    });
+    // 自动清理所有菜单项
+    const clearAllMenus = () => {
+        document.querySelectorAll('.submenu, .submenu-level2').forEach(submenu => submenu.style.display = 'none');
+        document.querySelectorAll('.show').forEach(item => item.classList.remove('show'));
+    };
 
-    // 二级菜单展开与关闭逻辑
+    // 二级菜单的展开与关闭逻辑
     menuItems.forEach(item => {
         item.addEventListener('click', function(event) {
             const parentLi = this.parentElement;
@@ -36,15 +33,19 @@ document.addEventListener('DOMContentLoaded', function() {
             if (parentLi.querySelector('.submenu')) {
                 event.preventDefault();
 
-                // 自动关闭所有二级菜单及其下的三级菜单
-                document.querySelectorAll('#menu > li.show').forEach(li => {
-                    if (li !== parentLi) {
-                        li.classList.remove('show');
-                        li.querySelectorAll('.submenu-level2 li.show').forEach(subLi => subLi.classList.remove('show'));
-                    }
+                const submenu = parentLi.querySelector('.submenu');
+
+                // 关闭所有其他二级菜单
+                document.querySelectorAll('.submenu').forEach(sub => {
+                    if (sub !== submenu) sub.style.display = 'none';
+                });
+
+                document.querySelectorAll('#menu > li').forEach(li => {
+                    if (li !== parentLi) li.classList.remove('show');
                 });
 
                 // 切换当前点击的菜单项
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
                 parentLi.classList.toggle('show');
             }
         });
@@ -61,14 +62,24 @@ document.addEventListener('DOMContentLoaded', function() {
             if (submenu) {
                 event.preventDefault();
 
-                // 关闭同一个二级菜单下的所有三级菜单
-                parentLi.parentElement.querySelectorAll('.submenu-level2 li').forEach(li => {
-                    if (li !== parentLi) li.classList.remove('show');
+                // 关闭所有同级的三级菜单
+                parentLi.parentElement.querySelectorAll('.submenu-level2').forEach(sub => {
+                    if (sub !== submenu) sub.style.display = 'none';
                 });
 
                 // 切换当前三级菜单的显示状态
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
                 parentLi.classList.toggle('show');
             }
         });
+    });
+
+    // 当窗口大小变化时，重置所有菜单
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) { 
+            clearAllMenus();
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
     });
 });
