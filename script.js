@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.classList.remove('active');
             hamburger.classList.remove('active');
             
-            // 新增：移除所有显示的子菜单（自动关闭二级菜单）
+            // 自动关闭所有展开的二级菜单和三级菜单
             document.querySelectorAll('.show').forEach(item => item.classList.remove('show'));
         }
     });
@@ -38,9 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (parentLi.querySelector('.submenu')) {
                 event.preventDefault(); // 阻止链接跳转
                 
-                // 新增：关闭其它所有展开的二级菜单
+                // 关闭其他所有展开的二级菜单和它们的三级菜单
                 document.querySelectorAll('#menu li.show').forEach(li => {
                     if (li !== parentLi) li.classList.remove('show');
+                    li.querySelectorAll('.submenu-level2 li.show').forEach(subLi => subLi.classList.remove('show'));
                 });
 
                 // 切换当前点击的菜单项
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (parentLi.querySelector('.submenu-level2')) {
                 event.preventDefault();
                 
-                // 新增：关闭其它所有展开的三级菜单
+                // **自动关闭其它所有展开的三级菜单**
                 document.querySelectorAll('.submenu-level2 li.show').forEach(li => {
                     if (li !== parentLi) li.classList.remove('show');
                 });
