@@ -86,11 +86,7 @@ nav ul li a:hover {
     z-index: 999;
 }
 
-/* 三级菜单位置偏移 */
-.submenu-level2 {
-    top: 0;
-    left: 100%;
-}
+
 
 /* 显示二级或三级菜单 */
 nav ul li.show > .submenu, nav ul li.show > .submenu-level2 {
