@@ -76,7 +76,7 @@ nav ul li a:hover {
     display: none;
     position: absolute; 
     top: 40px; /* 与导航栏高度保持一致，使其紧贴导航栏底部 *//*top: calc(100% - 2px);*/ /* 确保与导航栏的底线重叠 (-2px 用于完美重叠) */   /*top: 100%;*/
-    right:0;/*left: 0;*/
+    left: 0;/*right:0;/*left: 0;*/
     background-color: white;
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
