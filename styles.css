@@ -86,16 +86,6 @@ nav ul li a:hover {
     white-space: nowrap;
 }
 
-/* 修改 submenu 样式，让菜单项支持图标右对齐 */
-.submenu li {
-    position: relative;
-    padding: 10px;
-    display: flex; /* 使用 flexbox 布局 */
-    justify-content: space-between; /* 左对齐文字，右对齐图标 */
-    align-items: center; /* 垂直居中对齐 */
-    width: 100%; /* 自适应宽度 */
-}
-
 
 /* 三级菜单 (推动内容显示) */
 .submenu-level2 {
