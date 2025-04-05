@@ -75,7 +75,7 @@ nav ul li a:hover {
 .submenu {
     display: none;
     position: absolute; 
-    top: 100%;
+    top: calc(100% - 2px); /* 确保与导航栏的底线重叠 (-2px 用于完美重叠) */   /*top: 100%;*/
     left: 0;
     background-color: white;
     border: 1px solid #ddd;
