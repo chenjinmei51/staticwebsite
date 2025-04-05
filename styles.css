@@ -129,6 +129,15 @@ nav ul li a:hover {
     align-items: center;
     justify-content: space-between; /* 左对齐文本，右对齐三角号 */
     width: 100%;
+       color: black; /* 添加颜色属性 */
+    text-decoration: none; /* 添加文本装饰属性 */
+    transition: background-color 0.3s, color 0.3s; /* 添加过渡效果 */
+}
+
+/* 当二级菜单被点击后，添加的样式 */
+.submenu-item.active {
+    background-color: #FFEB3B; /* 点击后改变背景颜色 */
+    color: white; /* 点击后改变文字颜色 */
 }
 
 /* 左侧图标样式 */
