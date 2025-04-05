@@ -87,11 +87,22 @@ nav ul li a:hover {
 }
 
 /* 二级菜单列表样式 */
-.submenu li, .submenu-level2 li {
-    position: relative;
-    display: flex; /* 使用 flexbox 布局 */
-    align-items: center; /* 确保图标与文本垂直居中对齐 */
+.submenu li {
+    position: relative; /* 必须要有，以便三级菜单能够正确定位 */
+    display: block;
+}
+
+/* 三级菜单 */
+.submenu-level2 {
+    display: none;
+    position: absolute; /* 保持绝对定位 */
+    top: 100%; /* 确保在父级菜单的下方显示 */
+    left: 0; /* 对齐父级菜单的左侧 */
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
+    z-index: 998;
 }
 
 /* 子菜单链接样式 */
