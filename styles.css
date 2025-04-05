@@ -146,8 +146,8 @@ nav ul li.show > .submenu, nav ul li.show > .submenu-level2 {
     width: auto; /* 自动宽度 */
 }
 
-/* 当显示时 */
-.submenu li.show > .submenu-level2 {
+/* 显示菜单 */
+nav ul li.show > .submenu, nav ul li.show > .submenu-level2 {
     display: block;
 }
 
